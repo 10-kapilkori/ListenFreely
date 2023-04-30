@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.freely.listenfreely.view.fragments.HomeFragment"
+        android:label="Home Fragment"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.freely.listenfreely.view.fragments.SearchFragment"
+        android:label="Search Fragment"
+        tools:layout="@layout/fragment_search" />
+
+    <fragment
+        android:id="@+id/libraryFragment"
+        android:name="com.freely.listenfreely.view.fragments.MyLibraryFragment"
+        android:label="My Library Fragment"
+        tools:layout="@layout/fragment_my_library" />
+
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.freely.listenfreely.view.fragments.AccountFragment"
+        android:label="Account Fragment"
+        tools:layout="@layout/fragment_account" />
+</navigation>

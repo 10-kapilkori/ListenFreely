@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/inner_nav_graph"
+    app:startDestination="@id/musicFragment">
+
+    <fragment
+        android:id="@+id/musicFragment"
+        android:name="com.freely.listenfreely.view.fragments.MusicFragment"
+        android:label="Music Fragment" >
+
+        <action
+            android:id="@+id/action_musicFragment_to_podcastFragment"
+            app:destination="@id/podcastsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/podcastsFragment"
+        android:name="com.freely.listenfreely.view.fragments.PodcastsFragment"
+        android:label="Podcasts Fragment">
+
+        <action
+            android:id="@+id/action_podcastFragment_to_musicFragment"
+            app:destination="@id/musicFragment" />
+    </fragment>
+</navigation>
