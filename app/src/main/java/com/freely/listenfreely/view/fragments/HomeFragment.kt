@@ -11,6 +11,7 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import com.freely.listenfreely.R
 import com.freely.listenfreely.databinding.FragmentHomeBinding
 import com.freely.listenfreely.utils.Utils
@@ -39,10 +40,10 @@ class HomeFragment : Fragment() {
         fragmentHomeBinding.apply {
 
             requireActivity().onBackPressedDispatcher.addCallback(
-                viewLifecycleOwner,
-                object : OnBackPressedCallback(true) {
+                viewLifecycleOwner, object : OnBackPressedCallback(true) {
                     override fun handleOnBackPressed() {
-                        requireActivity().finish()
+                        if (findNavController().currentDestination?.id == R.id.homeFragment)
+                            requireActivity().finish()
                     }
                 })
 

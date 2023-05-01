@@ -14,4 +14,9 @@
     <string name="tracks">All Tracks</string>
     <string name="anime">Anime Song</string>
     <string name="podcast_all">All Podcasts</string>
+    <string name="search_hint">Music, Podcasts</string>
+    <string name="recently_searched">Recently Searched</string>
+    <string name="trendings">Trending</string>
+    <string name="channel">Channel</string>
+    <string name="all">See All</string>
 </resources>

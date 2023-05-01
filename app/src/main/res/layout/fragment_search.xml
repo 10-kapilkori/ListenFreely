@@ -1,14 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.fragments.SearchFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/search_til_search_box"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="?actionBarSize"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="16dp"
+            app:boxStrokeColor="@android:color/darker_gray"
+            app:boxStrokeWidth="1dp"
+            app:boxStrokeWidthFocused="1dp"
+            app:endIconMode="clear_text"
+            app:hintAnimationEnabled="false"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:startIconDrawable="@drawable/ic_search_non_selected">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/search_txt_search_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/search_hint"
+                android:inputType="none"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/search_rv_searches"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/transparent_box_background"
+            android:clipToPadding="false"
+            android:padding="8dp"
+            android:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/search_til_search_box"
+            app:layout_constraintStart_toStartOf="@id/search_til_search_box"
+            app:layout_constraintTop_toBottomOf="@id/search_til_search_box" />
+
+        <TextView
+            android:id="@+id/search_recentlySearched"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/nunito_medium"
+            android:text="@string/recently_searched"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/search_til_search_box" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/search_rv_recently_played"
+            android:layout_width="0dp"
+            android:layout_height="180dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/transparent_box_background"
+            android:clipToPadding="false"
+            android:padding="8dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="@id/search_til_search_box"
+            app:layout_constraintStart_toStartOf="@id/search_til_search_box"
+            app:layout_constraintTop_toBottomOf="@id/search_recentlySearched" />
+
+        <TextView
+            android:id="@+id/search_tv_trending"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/nunito_medium"
+            android:text="@string/trendings"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/search_rv_recently_played" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/search_rv_trending"
+            android:layout_width="0dp"
+            android:layout_height="180dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/transparent_box_background"
+            android:clipToPadding="false"
+            android:padding="4dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="@id/search_til_search_box"
+            app:layout_constraintStart_toStartOf="@id/search_til_search_box"
+            app:layout_constraintTop_toBottomOf="@id/search_tv_trending" />
+
+        <TextView
+            android:id="@+id/search_tv_channel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/nunito_medium"
+            android:text="@string/channel"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/search_rv_trending" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/search_rv_channel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/transparent_box_background"
+            android:clipToPadding="false"
+            android:padding="8dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/search_til_search_box"
+            app:layout_constraintStart_toStartOf="@id/search_til_search_box"
+            app:layout_constraintTop_toBottomOf="@id/search_tv_channel"
+            app:spanCount="2" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/search_g_views"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="search_recentlySearched,search_rv_channel,search_rv_trending,search_rv_recently_played,search_tv_trending, search_tv_channel" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
