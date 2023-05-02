@@ -10,12 +10,16 @@ import android.view.ViewGroup
 import androidx.core.widget.doOnTextChanged
 import com.freely.listenfreely.R
 import com.freely.listenfreely.databinding.FragmentSearchBinding
+import com.freely.listenfreely.utils.Utils
+import com.freely.listenfreely.view.adapters.CustomRecentlyPlayedSongsAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class SearchFragment : Fragment() {
 
     lateinit var fragmentSearchBinding: FragmentSearchBinding
+    lateinit var recentPlayedAdapter: CustomRecentlyPlayedSongsAdapter
+    lateinit var trendingSongAdapter: CustomRecentlyPlayedSongsAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,6 +33,12 @@ class SearchFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         fragmentSearchBinding.apply {
+            recentPlayedAdapter = CustomRecentlyPlayedSongsAdapter(requireContext(), Utils.recentlyPlayedTracksList)
+            searchRvRecentlyPlayed.adapter = recentPlayedAdapter
+
+            trendingSongAdapter = CustomRecentlyPlayedSongsAdapter(requireContext(), Utils.albumsList[1].topAlbumSongs)
+            searchRvTrending.adapter = trendingSongAdapter
+
             searchTxtSearchBox.doOnTextChanged { text, start, before, count ->
                 if (text?.isEmpty() == true) {
                     searchGViews.visibility = VISIBLE

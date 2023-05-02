@@ -1,7 +1,6 @@
 package com.freely.listenfreely.utils
 
 import android.content.Context
-import android.content.SharedPreferences
 import android.transition.TransitionManager
 import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -57,7 +56,7 @@ object Utils {
                 TopAlbumsSongs(
                     "Calm Down",
                     "https://c.saavncdn.com/596/Calm-Down-English-2022-20220826054039-150x150.jpg",
-                    "Four (Deluxe)",
+                    "Calm Down",
                     "Rema, Selena Gomez",
                     "3:59"
                 ),
@@ -1217,6 +1216,30 @@ object Utils {
                     "1:52"
                 )
             )
+        )
+    )
+
+    val recentlyPlayedTracksList: List<TopAlbumsSongs> = arrayListOf<TopAlbumsSongs>(
+        TopAlbumsSongs(
+            "Calm Down",
+            "https://c.saavncdn.com/596/Calm-Down-English-2022-20220826054039-150x150.jpg",
+            "Calm Down",
+            "Rema, Selena Gomez",
+            "3:59"
+        ),
+        TopAlbumsSongs(
+            "Night Changes",
+            "https://c.saavncdn.com/851/FOUR-Deluxe--English-2014-500x500.jpg",
+            "Four (Deluxe)",
+            "One Direction",
+            "3:46"
+        ),
+        TopAlbumsSongs(
+            "Harleys In Hawaii",
+            "https://c.saavncdn.com/289/Harleys-In-Hawaii-English-2019-20191015230756-150x150.jpg",
+            "Harleys In Hawaii",
+            "Katy Perry",
+            "3:06"
         )
     )
 
