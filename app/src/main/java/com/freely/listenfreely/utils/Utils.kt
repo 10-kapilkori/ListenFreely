@@ -1243,6 +1243,21 @@ object Utils {
         )
     )
 
+    val channelsList = arrayListOf<String>(
+        "https://c.saavncdn.com/editorial/WeekendDrive_saavn_radio_20201012143301_150x150.jpg",                              // DriveTime
+        "https://c.saavncdn.com/editorial/RoohaniSangeet_saavn_radio_20201028073245_150x150.jpg",                            // Roohani Sangeet
+        "https://c.saavncdn.com/editorial/Oldies50sand60s_saavn_radio_20201012131401_150x150.jpg",                           // Bollywood Oldies
+        "https://c.saavncdn.com/editorial/RabbRaakha_saavn_radio_20201012144734_150x150.jpg",                                // Rabb Rakkha
+        "https://c.saavncdn.com/editorial/Chill_saavn_radio_20201012143915_150x150.jpg",                                     // Chill
+        "https://c.saavncdn.com/editorial/Workout_saavn_radio_20211129083042_150x150.jpg",                                   // Workout
+        "https://c.saavncdn.com/editorial/PunjabiCovers_saavn_radio_20210528121042_150x150.jpg",                             // Punjabi Covers
+        "https://c.saavncdn.com/editorial/Retro70sand80s_saavn_radio_20211129082651_150x150.jpg",                            // Bollywood Retro
+        "https://c.saavncdn.com/editorial/Superhits_saavn_radio_20210226152608_150x150.jpg",                                 // SuperHit
+        "https://c.saavncdn.com/editorial/KPop_saavn_radio_20210507102922_150x150.jpg",                                      // Pop
+        "https://c.saavncdn.com/editorial/DumLagakeHaisha_saavn_radio_20210528121831_150x150.jpg",                           // Workout 2
+        "https://c.saavncdn.com/editorial/HipHop_saavn_radio_20201012143830_150x150.jpg"                                     // Hip Hop
+    )
+
     fun changeTabs(
         constraintLayout: ConstraintLayout,
         parentView: View,
